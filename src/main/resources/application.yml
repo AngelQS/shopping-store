@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: Shopping Store
+  servlet:
+    multipart:
+      max-file-size: 3MB
+  data:
+    mongodb:
+      database: shopping_store
+      host: localhost
+      port: 27017
+      repositories:
+        enabled: true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+graphql:
+  servlet:
+    maxQueryDepth: 100
+    exception-handlers-enabled: false
+  playground:
+    headers:
+      Authorization: Bearer TOKEN
+#      user_id: angelQS
+#    tabs:
+#      - name: GET BANK ACCOUNT
+#        query: classpath:playground/bank_account.graphql
+#        variables: classpath:playground/bank_account_variables.json
+
+#      - name: GET BANK ACCOUNTS
+#        query: classpath:playground/bank_accounts.graphql
+    enabled: true
+
+voyager:
+  enabled: true
+
+server:
+  port: 5000
+  http2:
+    enabled: true
